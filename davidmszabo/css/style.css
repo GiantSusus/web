@@ -46,9 +46,8 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 /* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
 #header {
-	background-color: #9668F2; margin-top:40px;
-}
-#header .wrap-header{height: 130px;}
+	background-color: #9668F2; margin-top:40px; }
+#header .wrap-header{height: 160px;  }
 
 /* ~~ This is the layout information. ~~ 
 
@@ -56,14 +55,23 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 */
 
-nav { display: block; position:relative; top: -80px;}
-nav .wrap-nav{position:absolute; top:50px; right:0px; height: 37px; -webkit-border-radius: 10px;-moz-border-radius: 10px;-khtml-border-radius: 10px;border-radius: 10px;  background:#333; padding:0px 10px;}
+nav { display: block; position:relative; }
+nav .wrap-nav{ top:50px; right:0px; height: 37px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	border-radius: 10px;
+	background: #333;
+	padding: 0px 10px;
+}
 
 .menu ul {list-style: none; margin: 0; padding: 0;}
-.menu  ul li {position: relative; float: left; padding: 6px 5px 0px 5px;}
+.menu  ul li {position: relative; float: right; padding: 6px 5px 0px 5px;}
 .menu  ul li:hover {background-color:#DB5705;}
 .menu  ul li a {font-size: 14px; line-height:14px;color: #CCC;display: block;padding: 6px 10px;margin-bottom: 5px;z-index: 6;position: relative;font-weight:bold; text-transform:uppercase; font-family: 'Passion One',cursive;}
-.menu  ul li:hover a {color:#ffffff;}
+.menu  ul li:hover a {
+	color: #FFFFFF;
+}
 
 .minimenu{display:none;}
 .minimenu{position: relative;margin: 0px;background:#333333;}
@@ -78,17 +86,15 @@ nav .wrap-nav{position:absolute; top:50px; right:0px; height: 37px; -webkit-bord
 	clear: both;
 	padding: 10px 0;
 }
+#content h1 { color: #333;}
+#content p { color: #333;}
+
 
 																
-
-
-																/* ~~ The footer ~~ */
+													/* ~~ The footer ~~ */
 																
 																
-#footer {
-	padding: 10px 0;
-	background-color: #B1D9DE;
-}
+
 #footer {background-color:#333; margin-top:30px;}
 #footer .wrap-footer{padding:10px 0px; color:#ffffff;}
 #footer .box{}
@@ -115,4 +121,3 @@ nav .wrap-nav{position:absolute; top:50px; right:0px; height: 37px; -webkit-bord
 	font-size: 1px;
 	line-height: 0px;
 }
-
