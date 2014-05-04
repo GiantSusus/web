@@ -37,7 +37,6 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 /* ~~ this fixed width container surrounds the other divs ~~ */
 #container {
-	width: 960px;
 	background-color: #FFF;
 	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
 }
@@ -45,9 +44,9 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 																/* ------------------Header-------------------- */
 
 /* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
-#header {
-	background-color: #9668F2; margin-top:40px; }
-#header .wrap-header{height: 160px;  }
+#header > body {
+	background-color: #9668F2; margin-top:40px; padding: 27px 0;}
+#header .wrap-header { }
 
 /* ~~ This is the layout information. ~~ 
 
@@ -56,7 +55,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 */
 
 nav { display: block; position:relative; }
-nav .wrap-nav{ top:50px; right:0px; height: 37px;
+nav .wrap-nav{  height: 37px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	-khtml-border-radius: 10px;
@@ -99,7 +98,7 @@ nav .wrap-nav{ top:50px; right:0px; height: 37px;
 #footer .wrap-footer{padding:10px 0px; color:#ffffff;}
 #footer .box{}
 #footer .heading{ padding:5px; border-bottom:3px solid #DB5705;}
-#footer .heading h2{font-size:22px; font-weight:normal; display:inline; padding:0 5px; font-family: 'Passion One',cursive;}
+#footer .heading h2{font-size:22px; font-weight:normal; display:inline; padding:0 25px; font-family: 'Passion One',cursive;}
 #footer .content{padding:5px}
 #footer .content a{color:#DB5705; text-decoration:none;}
 #footer .content .gallery img{ float:left; padding:5px; border:1px solid #CCC; margin:5px;}
