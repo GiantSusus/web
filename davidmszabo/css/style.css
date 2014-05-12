@@ -54,20 +54,23 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 */
 
-nav { display: block; position:relative; }
-nav .wrap-nav{  height: 37px;
+nav {
+	display: block;
+	position: relative;
+	background-image: url(../images/background_gray.jpg);
+}
+nav .wrap-nav{  height: 60px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	-khtml-border-radius: 10px;
 	border-radius: 10px;
-	background: #333;
 	padding: 0px 10px;
 }
 
 .menu ul {list-style: none; margin: 0; padding: 0;}
 .menu  ul li {position: relative; float: right; padding: 6px 5px 0px 5px;}
 .menu  ul li:hover {background-color:#DB5705;}
-.menu  ul li a {font-size: 14px; line-height:14px;color: #CCC;display: block;padding: 6px 10px;margin-bottom: 5px;z-index: 6;position: relative;font-weight:bold; text-transform:uppercase; font-family: 'Passion One',cursive;}
+.menu  ul li a {font-size: 14px; text-decoration: none; line-height:34px;color: #CCC;display: block;padding: 6px 10px;margin-bottom: 5px;z-index: 6;position: relative;font-weight:bold; text-transform:uppercase; font-family: 'Passion One',cursive; }
 .menu  ul li:hover a {
 	color: #FFFFFF;
 }
@@ -81,20 +84,41 @@ nav .wrap-nav{  height: 37px;
 																	/* ~~ The content ~~ */
 
 
-#content {
-	clear: both;
-	padding: 10px 0;
-}
+#content {}
 #content h1 { color: #333;}
 #content p { color: #333;}
+#content {}
+#content .wrap-content{background-color: #F8F8FF; border:1px solid #CCC;  }
+
+.block01 { padding-bottom:30px; width: 90%; position: relative; padding-left: 100px;}
+.block01 h2{font-size:20px; line-height:30px; font-family: 'Passion One',cursive;}
+.block01 p{}
+
+#main-content{}
+#main-content article{clear: both; width: auto; font-size:14px; margin:10px 10px 20px 10px;}
+#main-content article .heading{}
+#main-content article .content{}
+#main-content article h2{font-size:32px; text-align: center; line-height:30px; font-family: DeliciousBold,Helvetica,Arial,Sans-serif; letter-spacing: -0.5px; text-decoration: none;}
+
+#main-content article .info{font-style:italic; text-align: center; font-size:12px;}
+#main-content article .info a{ text-decoration:underline;}
+#main-content article p{margin-bottom:10px; margin-left: 20px;}
+#main-content article .more{float:right; margin-bottom: 30px;}
 
 
+#pagi{ clear: both; margin: 30px auto;padding: 0;list-style: none;width: 180px;}
+#pagi li {float: left;margin-right: 10px;}
+#pagi li a {display: block;	text-decoration: none; color: #717171;font: bold 11px Arial, sans-serif;padding: 5px 8px;
+	-webkit-border-radius: 3px;	-moz-border-radius: 3px;	border-radius: 3px;	background: #ffffff;}
+#pagi li a.current, #pagi li a:hover {color: #ffffff;	background: #DB5705;}
+
+																
 																
 													/* ~~ The footer ~~ */
 																
 																
 
-#footer {background-color:#333; margin-top:30px;}
+#footer {background-color:#333; margin-top:30px; clear: both;}
 #footer .wrap-footer{padding:10px 0px; color:#ffffff;}
 #footer .box{}
 #footer .heading{ padding:5px; border-bottom:3px solid #DB5705;}
@@ -104,6 +128,7 @@ nav .wrap-nav{  height: 37px;
 #footer .content .gallery img{ float:left; padding:5px; border:1px solid #CCC; margin:5px;}
 #footer .content .social ul {list-style: none;margin: 0;padding: 0;}
 #footer .content .social ul li {position: relative;float: left;padding: 6px 5px 0px 5px;}
+#footer p { font-family: 'Passion One'}
 
 /* ~~ miscellaneous float/clear classes ~~ */
 .fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
