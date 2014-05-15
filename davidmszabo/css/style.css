@@ -56,10 +56,10 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 nav {
 	display: block;
-	position: relative;
 	background-image: url(../images/background_gray.jpg);
 }
 nav .wrap-nav{  height: 60px;
+	width: 90%; 
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	-khtml-border-radius: 10px;
@@ -81,23 +81,17 @@ nav .wrap-nav{  height: 60px;
 .minimenu select{position: absolute;top: 0px;left: 0px;width: 100%;height: 100%; opacity: 0;filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);	cursor: pointer;}
 
 
-																	/* ~~ The content ~~ */
+									/* ~~ The content ~~ */
 
-
-#content {}
-#content h1 { color: #333;}
-#content p { color: #333;}
-#content {}
-#content .wrap-content{background-color: #F8F8FF; border:1px solid #CCC;  }
-
-.block01 { padding-bottom:30px; width: 90%; position: relative; padding-left: 100px;}
-.block01 h2{font-size:20px; line-height:30px; font-family: 'Passion One',cursive;}
-.block01 p{}
+#content { }
+#content h1 {}
+#content p { }
+#content .wrap-content{ background-color: #F8F8FF; border:1px solid #CCC; width: 80%; margin-left:auto; margin-right:auto; }
 
 #main-content{}
-#main-content article{clear: both; width: auto; font-size:14px; margin:10px 10px 20px 10px;}
+#main-content article{clear: both; width: auto; font-size:14px; }
 #main-content article .heading{}
-#main-content article .content{}
+#main-content article .content{ margin:10px  50px; }
 #main-content article h2{font-size:32px; text-align: center; line-height:30px; font-family: DeliciousBold,Helvetica,Arial,Sans-serif; letter-spacing: -0.5px; text-decoration: none;}
 
 #main-content article .info{font-style:italic; text-align: center; font-size:12px;}
