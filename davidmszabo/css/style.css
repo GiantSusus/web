@@ -44,8 +44,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 																/* ------------------Header-------------------- */
 
 /* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
-#header > body {
-	background-color: #9668F2; margin-top:40px; padding: 27px 0;}
+#header { }
 #header .wrap-header { }
 
 /* ~~ This is the layout information. ~~ 
@@ -86,29 +85,29 @@ nav .wrap-nav{  height: 60px;
 #content { }
 #content h1 {}
 #content p { }
-#content .wrap-content{ background-color: #F8F8FF; border:1px solid #CCC; width: 80%; margin-left:auto; margin-right:auto; }
+#content .wrap-content{ background-color: #FFF; width: 80%; margin-left:auto; margin-right:auto; }
 
 #main-content{}
-#main-content article{clear: both; width: auto; font-size:14px; }
+#main-content article{ width: auto; background-color: #F8F8FF; font-size:14px; border: 1px solid #CCC; margin: 15px 0px; }
 #main-content article .heading{}
 #main-content article .content{ margin:10px  50px; }
-#main-content article h2{font-size:32px; text-align: center; line-height:30px; font-family: DeliciousBold,Helvetica,Arial,Sans-serif; letter-spacing: -0.5px; text-decoration: none;}
-
-#main-content article .info{font-style:italic; text-align: center; font-size:12px;}
+#main-content article h2{ font-size:32px; text-align: center; line-height:30px; font-family: DeliciousBold,Helvetica,Arial,Sans-serif; letter-spacing: -0.5px; text-decoration: none;}
+#main-content article .info{ font-style:italic; text-align: center; font-size:12px;}
 #main-content article .info a{ text-decoration:underline;}
-#main-content article p{margin-bottom:10px; margin-left: 20px;}
-#main-content article .more{float:right; margin-bottom: 30px;}
+#main-content article p{ margin-bottom:10px; margin-left: 20px;}
+#main-content article .more { margin-left: 80%; }
 
-
-#pagi{ clear: both; margin: 30px auto;padding: 0;list-style: none;width: 180px;}
-#pagi li {float: left;margin-right: 10px;}
-#pagi li a {display: block;	text-decoration: none; color: #717171;font: bold 11px Arial, sans-serif;padding: 5px 8px;
+#main-content  #pagi { width: 180px; height: 40px; margin-left: auto; margin-right: auto; }
+#main-content #pagi { padding: 0;list-style: none; width: 180px;}
+#main-content #pagi li {float: left;margin-right: 10px;}
+#main-content #pagi li a {display: block;	text-decoration: none; color: #717171;font: bold 11px Arial, sans-serif;padding: 5px 8px;
 	-webkit-border-radius: 3px;	-moz-border-radius: 3px;	border-radius: 3px;	background: #ffffff;}
-#pagi li a.current, #pagi li a:hover {color: #ffffff;	background: #DB5705;}
+#main-content #pagi li a.current {color: #ffffff;	background: #DB5705;}
+#main-content #pagi li a:hover {color: #ffffff;	background: #DB5705;}
 
 																
 																
-													/* ~~ The footer ~~ */
+									/* ~~ The footer ~~ */
 																
 																
 
