@@ -1,6 +1,15 @@
 @charset "UTF-8";
 /* CSS Document */
 
+/*
+	Theme Name: David Mark blog
+	Date: may 2014
+	Description: Basic HTML5/CSS3 layout built on a responsive framework
+	Version: 1.0
+	Author: David M. Szabo
+	Author URL: http://davidmszabo.com
+*/
+
 body {
 	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
 	background-color: #42413C;
@@ -24,8 +33,7 @@ a img { /* this selector removes the default blue border displayed in some brows
 }
 /* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
 a:link {
-	color: #42413C;
-	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+	color: #42413C; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
 }
 a:visited {
 	color: #6E6C64;
@@ -39,13 +47,14 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 #container {
 	background-color: #FFF;
 	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+	min-height: 100%;
+	width: 90%;
 }
 																
 																/* ------------------Header-------------------- */
 
 /* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
-#header { }
-#header .wrap-header { }
+header {}
 
 /* ~~ This is the layout information. ~~ 
 
@@ -53,31 +62,19 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 */
 
-nav {
-	display: block;
-	background-image: url(../images/background_gray.jpg);
-}
-nav .wrap-nav{  height: 60px;
-	width: 90%; 
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-khtml-border-radius: 10px;
-	border-radius: 10px;
-	padding: 0px 10px;
-}
+nav { display: block; background-image: url(../images/background_gray.jpg); }
+nav .wrap-nav{  height: 6%; width: 95%; /*this determines that how far is it from the right side*/ }
 
-.menu ul {list-style: none; margin: 0; padding: 0;}
-.menu  ul li {position: relative; float: right; padding: 6px 5px 0px 5px;}
-.menu  ul li:hover {background-color:#DB5705;}
-.menu  ul li a {font-size: 14px; text-decoration: none; line-height:34px;color: #CCC;display: block;padding: 6px 10px;margin-bottom: 5px;z-index: 6;position: relative;font-weight:bold; text-transform:uppercase; font-family: 'Passion One',cursive; }
-.menu  ul li:hover a {
-	color: #FFFFFF;
-}
+.menu ul { list-style: none; margin: 0; padding: 0; }
+.menu  ul li { position: relative; float: right; padding: 6px 5px 0px 5px; /*top right bottom left*/}
+.menu  ul li:hover { background-color:#DB5705; }
+.menu  ul li a { font-size: 14px; text-decoration: none; line-height:34px; color: #CCC; display: block; padding: 6px 10px; margin-bottom: 5px; z-index: 6; font-weight:bold; text-transform: uppercase; font-family: 'Passion One',cursive; }
+.menu  ul li:hover a { color: #FFFFFF; }
 
-.minimenu{display:none;}
-.minimenu{position: relative;margin: 0px;background:#333333;}
-.minimenu div{overflow: hidden;position: relative;font: 18px/37px 'PT Sans Narrow';color: #fff;text-align:center;text-transform:uppercase;font-weight:bold;}
-.minimenu select{position: absolute;top: 0px;left: 0px;width: 100%;height: 100%; opacity: 0;filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);	cursor: pointer;}
+.minimenu{ display:none;}
+.minimenu{ position: relative; margin: 0px;background:#333333;}
+.minimenu div{ overflow: hidden; position: relative; font: 18px/37px 'PT Sans Narrow'; color: #fff;text-align:center; text-transform: uppercase;font-weight:bold;}
+.minimenu select{ position: absolute;top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0;filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);	cursor: pointer;}
 
 
 									/* ~~ The content ~~ */
@@ -85,25 +82,77 @@ nav .wrap-nav{  height: 60px;
 #content { }
 #content h1 {}
 #content p { }
-#content .wrap-content{ background-color: #FFF; width: 80%; margin-left:auto; margin-right:auto; }
+#content .wrap-content{ background-color: #FFF; width: 74%; float: left; /*sidebar can push it now, 74%, 24% sidebar + 2% margin left = 100% */ }
 
 #main-content{}
-#main-content article{ width: auto; background-color: #F8F8FF; font-size:14px; border: 1px solid #CCC; margin: 15px 0px; }
-#main-content article .heading{}
-#main-content article .content{ margin:10px  50px; }
-#main-content article h2{ font-size:32px; text-align: center; line-height:30px; font-family: DeliciousBold,Helvetica,Arial,Sans-serif; letter-spacing: -0.5px; text-decoration: none;}
-#main-content article .info{ font-style:italic; text-align: center; font-size:12px;}
-#main-content article .info a{ text-decoration:underline;}
-#main-content article p{ margin-bottom:10px; margin-left: 20px;}
-#main-content article .more { margin-left: 80%; }
+#main-content article{ width: auto; background-color: #F8F8FF; font-size:14px; border: 1px solid #CCC; margin: 3% 0px; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; 
+ }
+#main-content article header{ padding: 3% 5%; }
 
-#main-content  #pagi { width: 180px; height: 40px; margin-left: auto; margin-right: auto; }
-#main-content #pagi { padding: 0;list-style: none; width: 180px;}
-#main-content #pagi li {float: left;margin-right: 10px;}
-#main-content #pagi li a {display: block;	text-decoration: none; color: #717171;font: bold 11px Arial, sans-serif;padding: 5px 8px;
-	-webkit-border-radius: 3px;	-moz-border-radius: 3px;	border-radius: 3px;	background: #ffffff;}
-#main-content #pagi li a.current {color: #ffffff;	background: #DB5705;}
-#main-content #pagi li a:hover {color: #ffffff;	background: #DB5705;}
+#main-content article content{ font-family: Verdana, Arial, Helvetica, sans-serif; }
+#main-content article h2{ font-size:32px; text-align: center; line-height:30px; font-family: DeliciousBold,Helvetica,Arial,Sans-serif; letter-spacing: -0.5px; text-decoration: none;}
+#main-content article .info{ font-family: Verdana, Arial, Helvetica, sans-serif; font-style:italic; text-align: center; font-size:12px;}
+#main-content article .info a{ text-decoration: underline; }
+#main-content article p{ margin-bottom:3%; margin-left: 5%; }
+#main-content article .more { margin-left: 75%; }
+
+							/*~~~~added for the single page~~~~~*/
+							
+#main-content article content img { width: 90%; display: block; margin: 3% auto; }/*kell a display block, h közepre menjen*/
+#main-content article content a {text-decoration: none; color: #DB5705; }
+#main-content article content a.current {color: #ffffff; background: #DB5705;}
+#main-content article content a:hover {color: #ffffff;	background: #DB5705;}
+
+								/*~~~~single page comment section~~~~~*/
+
+#main-content .comment{ font-weight: bold; margin: 50px 0px; width: auto;}
+#main-content .comment div{ margin-bottom: 20px; vertical-align: middle; }
+#main-content .comment input{ border: 2px solid #999999; padding: 8px 10px; width:250px;}
+#main-content .comment textarea{ border: 2px solid #999999; padding: 8px 10px; width:95%;}
+#main-content .comment input[type="submit"] { cursor: pointer; width:100px; float:right;
+	background: -webkit-linear-gradient(top, #efefef, #ddd);background: -moz-linear-gradient(top, #efefef, #ddd);
+	background: -ms-linear-gradient(top, #efefef, #ddd);background: -o-linear-gradient(top, #efefef, #ddd);
+	background: linear-gradient(top, #efefef, #ddd);
+	color: #333;text-shadow: 0px 1px 1px rgba(255,255,255,1);	border: 2px solid #999999; margin-bottom: 2%; }
+#main-content .comment input[type="submit"]:hover {
+	background: -webkit-linear-gradient(top, #eee, #ccc);	background: -moz-linear-gradient(top, #eee, #ccc);
+	background: -ms-linear-gradient(top, #eee, #ccc);	background: -o-linear-gradient(top, #eee, #ccc);
+	background: linear-gradient(top, #eee, #ccc);	border: 2px solid #bbb;}
+#main-content .comment input[type="submit"]:active {
+	background: -webkit-linear-gradient(top, #ddd, #aaa);	background: -moz-linear-gradient(top, #ddd, #aaa);
+	background: -ms-linear-gradient(top, #ddd, #aaa);	background: -o-linear-gradient(top, #ddd, #aaa);
+	background: linear-gradient(top, #ddd, #aaa);	border: 2px solid #999;}
+
+
+
+
+								/*~~~~	pagi navigation	~~~~*/
+
+#main-content  #pagi { width: 180px; height: 40px; margin-left: auto; margin-right: auto; padding: 0;list-style: none; width: 190px;}
+#main-content #pagi li { float: left;margin-right: 10px; }
+#main-content #pagi li a { display: block;	text-decoration: none; color: #717171; font: bold 12px Arial, sans-serif;padding: 5px 8px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background: #ffffff; }
+#main-content #pagi li a.current {color: #ffffff; background: #DB5705; }
+#main-content #pagi li a:hover {color: #ffffff;	background: #DB5705; }
+
+
+									/* ~~ The sidebar ~~ */
+
+
+.top-sidebar { width: 24%; float: left; margin: 2% 0 2% 2%; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; background-color: #F8F8FF; padding: 1%; border: 1px solid #CCC; font-family: Verdana, Arial, Helvetica, sans-serif; }
+
+.top-sidebar h5 { font-weight: bold; text-align: left; border-bottom:1px solid #CCC;}
+.top-sidebar img { float: left; width: 71px; height: 90px; margin-right: 5%; }
+.top-sidebar p { text-align: left; font-weight: 550; font-size: 8px; font-family: Verdana, Arial, Helvetica, sans-serif; }
+.top-sidebar h6 { font: bold 9px Verdana, Arial, Helvetica, sans-serif; }
+.top-sidebar  ul { display: inline-block; list-style: none; margin: 0; padding: 0; }
+.top-sidebar  ul li { position: relative; float: left; padding: 0 3px; }
+.top-sidebar  ul li img { float: left; width: 17px; height: 17px; }
+
+
+.bottom-sidebar { width: 24%; float: left; margin-left: 2%; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; background-color: #F8F8FF; padding: 1%; border: 1px solid #CCC; font-family: Verdana, Arial, Helvetica, sans-serif; }
+	
+.bottom-sidebar h5 { font-weight: bold; text-align: left; border-bottom:1px solid #CCC;}
+.bottom-sidebar p { text-align: left; font-weight: 550; font-size: 12px; font-family: Verdana, Arial, Helvetica, sans-serif; }
 
 																
 																
@@ -111,30 +160,15 @@ nav .wrap-nav{  height: 60px;
 																
 																
 
-#footer {background-color:#333; margin-top:30px; clear: both;}
-#footer .wrap-footer{padding:10px 0px; color:#ffffff;}
-#footer .box{}
-#footer .heading{ padding:5px; border-bottom:3px solid #DB5705;}
-#footer .heading h2{font-size:22px; font-weight:normal; display:inline; padding:0 25px; font-family: 'Passion One',cursive;}
-#footer .content{padding:5px}
-#footer .content a{color:#DB5705; text-decoration:none;}
-#footer .content .gallery img{ float:left; padding:5px; border:1px solid #CCC; margin:5px;}
-#footer .content .social ul {list-style: none;margin: 0;padding: 0;}
-#footer .content .social ul li {position: relative;float: left;padding: 6px 5px 0px 5px;}
-#footer p { font-family: 'Passion One'}
+footer { margin-top: 15px; clear: both; background-image: url(../images/background_gray.jpg); color: #ffffff; }
 
-/* ~~ miscellaneous float/clear classes ~~ */
-.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
-	float: right;
-	margin-left: 8px;
-}
-.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
-	float: left;
-	margin-right: 8px;
-}
-.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
-	clear:both;
-	height:0;
-	font-size: 1px;
-	line-height: 0px;
-}
+footer .clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both; }
+footer header { padding: 1px 0px; border-bottom: 3px solid #DB5705; }
+footer header h2{ font-size:22px; font-weight:normal; padding:0 15px; font-family: 'Passion One',cursive; }
+footer .content { padding: 3px; }
+footer p { font-family: 'Passion One', cursive; }
