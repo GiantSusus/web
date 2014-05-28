@@ -1,5 +1,4 @@
-<?php
-echo "I have a car";
+
 <form method="post">
     <div><input type='text' name='name' id='name'> Name *</div>
     <div><input type='email' name='email' id='email'> Email *</div>
@@ -8,4 +7,3 @@ echo "I have a car";
     <input type='hidden' name='articleid' id='articleid' value='<? echo $_GET["id"]; ?>' />
     <input type='submit' value='Submit'>
 </form>
-?>

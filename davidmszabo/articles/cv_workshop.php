@@ -19,23 +19,19 @@
 		<div class="wrap-nav">
           <div class="menu">
                      <ul>
-                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index_en.php">Home</a></li>
                     </ul>
           </div>
 				
             <div class="minimenu"><div>MENU</div>
                 <select onchange="location=this.value">
                     <option></option>
-                    <option value="index.html">Home</option>
-                    <option value="aboutme.html">About Me</option>
+                    <option value="index.php">Home</option>
                 </select>
 			</div>
 		</div>
 	</nav>
    <!-- end .header --></header>
-    
-    
-    
     
     
     
@@ -70,7 +66,6 @@ And yet another confirmation of the fact that itâ€™s people who make the place â
                      
             <div class="comment">
                 <p>Your email address will not be published. Required fields are marked *</p>
-                <?php include 'echo.php'; ?>
                 <?php include 'formcode.php'; ?>
             </div>
             </div>
