@@ -13,6 +13,8 @@
 
 <body>
 
+<? include("manage_comments.php"); ?>
+
 <div id="container">
   <header>
   	<nav>
@@ -102,7 +104,7 @@ And yet another confirmation of the fact that it’s people who make the place �
 				<div class="content">
 							<p>Copyright © 2015 </p>
 				</div>
-    <!-- end .footer --></footer>
+  </footer>
   
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

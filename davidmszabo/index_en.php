@@ -19,15 +19,14 @@
 		<div class="wrap-nav">
           <div class="menu">
                      <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index_en.php">Home</a></li>
                     </ul>
           </div>
 				
             <div class="minimenu"><div>MENU</div>
                 <select onchange="location=this.value">
                     <option></option>
-                    <option value="index.html">Home</option>
-                    <option value="aboutme.html">About Me</option>
+                    <option value="index_en.php">Home</option>
                 </select>
 			</div>
 		</div>
