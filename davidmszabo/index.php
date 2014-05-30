@@ -2,13 +2,13 @@
 
 $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
 switch ($lang){
-    case "fr":
+    case "is":
         //echo "PAGE FR";
-        include("index_fr.php");//include check session FR
+        include("index_is.php");//include check session FR
         break;
-    case "it":
+    case "se":
         //echo "PAGE IT";
-        include("index_it.php");
+        include("index_se.php");
         break;
     case "en":
         //echo "PAGE EN";
