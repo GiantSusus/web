@@ -63,7 +63,7 @@ header {}
 */
 
 nav { display: block; background-image: url(../images/background_gray.jpg); }
-nav .wrap-nav{  height: 10%; width: 95%; /*this determines that how far is it from the right side*/ }
+nav .wrap-nav{  height: 63px; width: 95%; /*this determines that how far is it from the right side*/ }
 
 .menu ul { list-style: none; margin: 0; padding: 0; }
 .menu  ul li { position: relative; float: right; padding: 1% 1% 0px 1%; /*top right bottom left*/}

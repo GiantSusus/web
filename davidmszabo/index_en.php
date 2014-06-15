@@ -83,8 +83,8 @@
                         <h6>David M. Szabo</h6>
                         <p> Software engineer, accountant, traveler, squash player</p>
                          <ul>
-                            <li><a href="https://twitter.com/David_M_Szabo"><img src="images/twitter.png" /></a></li>
-                            <li><a href="https://www.facebook.com/szdavidm"><img src="images/facebook.png" /></a></li>
+                            <li><a href="https://twitter.com/David_M_Szabo"><img src="images/twitter.png"></a></li>
+                            <li><a href="https://www.facebook.com/szdavidm"><img src="images/facebook.png"></a></li>
 						</ul>
 				    </article>
 				</aside>

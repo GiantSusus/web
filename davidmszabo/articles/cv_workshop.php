@@ -14,6 +14,7 @@
 <body>
 
 <? include("manage_comments.php"); ?>
+<!-- on localhost go to http://localhost/~jatekbox/phpmyadmin/index.php and http://localhost/~jatekbox/testsite/index_en.php-->
 
 <div id="container">
   <header>
@@ -43,7 +44,9 @@
 					<article>
 						<header>
 							<h2><a href="cv_workshop.php?id=1">CV Workshop</a></h2>
+
 							<div class="info">By Admin on may 24, 2014 with <a href="#">0 Commnets</a></div> <!-- end of info -->
+
   	</header> <!-- end of heading -->
     <content>
     <p>I attended a CV workshop at Göteborg University that was hosted by the IT mentorship program. I was a bit skeptical about it, because I thought that my CV looked quite structured and the content was OK. I brought my general swedish CV with me that was for a broad kind of job opportunities.</p>
@@ -65,8 +68,9 @@ And yet another confirmation of the fact that it’s people who make the place �
            			</article>
                     
                     	<!--  ~~~~~~~~comment~~~~~~~~~~~~~~ -->
-                     
+             
             <div class="comment">
+            	<? include("display_comments.php"); ?>
                 <p>Your email address will not be published. Required fields are marked *</p>
                 <?php include 'formcode.php'; ?>
             </div>

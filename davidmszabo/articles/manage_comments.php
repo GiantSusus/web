@@ -12,8 +12,12 @@ if( $_POST )
 
   // Below we are setting up our connection to the server. Because
   // the database lives on the same physical server as our php code,
+
   // we are connecting to "localhost". 
   // write DB_HOST, DB_USER, DB_PASSWORD e.g.: localhost, root, password
+//  $con = mysql_connect("localhost","root"," ");
+  // mysql_select_db("inmoti6_mysite", $con);
+
   // or if it is a webserver then: ip_address, db user name, db password
   // previously with the DB_name: db1214492_davidmszabo and 83.168.227.176","u1214492_DavidS2","Jor3gg3lt_Vi3tn@m"
   // or "u1214492_web","_Naegling882_" and db1214492_cityofassassins
@@ -24,6 +28,11 @@ if( $_POST )
   $database = 'db1214492_davidmszabo';
 
   $con = mysql_connect($dbhost, $dbuser, $dbpassword);
+
+  // we are connecting to "localhost". inmoti6_myuser and mypassword
+  // are the username and password we setup for our database when
+  // using the "MySQL Database Wizard" within cPanel
+  $con = mysql_connect("localhost","root"," ");
 
   // The statement above has just tried to connect to the database.
   // If the connection failed for any reason (such as wrong username
@@ -37,8 +46,9 @@ if( $_POST )
   // We now need to select the particular database that we are working with
   // In this example, we setup (using the MySQL Database Wizard in cPanel) a
   // database named inmoti6_mysite
-  mysql_select_db($database, $con);
 
+  mysql_select_db($database, $con);
+  
   // We now need to create our INSERT command to insert the user's
   // comment into the database.
   //
@@ -127,9 +137,13 @@ if( $_POST )
 
   $query = "
   INSERT INTO db1214492_davidmszabo.comments (id, name, email, website,
-        comment, timestamp, articleid) VALUES (NULL, '$users_name',
-        '$users_email', '$users_website', '$users_comment',
+        comment, timestamp, articleid) VALUES (NULL, '$users_name', '$users_email', '$users_website', '$users_comment',
         CURRENT_TIMESTAMP, '$articleid');";
+
+ /* INSERT INTO `inmoti6_mysite`.`comments` (`id`, `name`, `email`, `website`,
+        `comment`, `timestamp`, `articleid`) VALUES (NULL, '$users_name',
+        '$users_email', '$users_website', '$users_comment',
+        CURRENT_TIMESTAMP, '$articleid');";*/
 
 $sql = "INSERT INTO `db1214492_davidmszabo`.`comments` (id, name, email, website, comment, timestamp, articleid) 
 VALUES (NULL , '$users_name', '$users_email', '$users_website', '$users_comment', CURRENT_TIMESTAMP, '$articleid')";
