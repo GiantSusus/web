@@ -14,6 +14,7 @@
 <body>
 
 <? include("manage_comments.php"); ?>
+<!-- on localhost go to http://localhost/~jatekbox/phpmyadmin/index.php and http://localhost/~jatekbox/testsite/index_en.php-->
 
 <div id="container">
   <header>
@@ -28,7 +29,7 @@
             <div class="minimenu"><div>MENU</div>
                 <select onchange="location=this.value">
                     <option></option>
-                    <option value="index.php">Home</option>
+                    <option value="../index_en.php">Home</option>
                 </select>
 			</div>
 		</div>
@@ -42,7 +43,7 @@
 		<div id="main-content"> <!-- main content for the p, h2 ..., col 1-3 only for the width: 100%;-->
 					<article>
 						<header>
-							<h2><a href="#">CV Workshop</a></h2>
+							<h2><a href="cv_workshop.php?id=1">CV Workshop</a></h2>
 							<div class="info">By Admin on maj 24, 2014 with <a href="#">0 Commnets</a></div> <!-- end of info -->
   	</header> <!-- end of heading -->
     <content>
@@ -65,8 +66,9 @@ And yet another confirmation of the fact that itâ€™s people who make the place â
            			</article>
                     
                     	<!--  ~~~~~~~~comment~~~~~~~~~~~~~~ -->
-                     
+             
             <div class="comment">
+            	<? include("display_comments.php"); ?>
                 <p>Your email address will not be published. Required fields are marked *</p>
                 <?php include 'formcode.php'; ?>
             </div>

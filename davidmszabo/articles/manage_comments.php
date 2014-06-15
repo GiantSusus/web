@@ -15,7 +15,7 @@ if( $_POST )
   // we are connecting to "localhost". inmoti6_myuser and mypassword
   // are the username and password we setup for our database when
   // using the "MySQL Database Wizard" within cPanel
-  $con = mysql_connect("localhost","u1214492_DavidS2","Jor3gg3lt_Vi3tn@m");
+  $con = mysql_connect("localhost","root"," ");
 
   // The statement above has just tried to connect to the database.
   // If the connection failed for any reason (such as wrong username
@@ -29,7 +29,7 @@ if( $_POST )
   // We now need to select the particular database that we are working with
   // In this example, we setup (using the MySQL Database Wizard in cPanel) a
   // database named inmoti6_mysite
-  mysql_select_db("db1214492_davidmszabo", $con);
+  mysql_select_db("inmoti6_mysite", $con);
 
   // We now need to create our INSERT command to insert the user's
   // comment into the database.
@@ -115,7 +115,7 @@ if( $_POST )
   // to update our SQL query. For example, instead of "John Smith", we'll
   // use $users_name. Below is our updated SQL command:
   $query = "
-  INSERT INTO `db1214492_davidmszabo`.`comments` (`id`, `name`, `email`, `website`,
+  INSERT INTO `inmoti6_mysite`.`comments` (`id`, `name`, `email`, `website`,
         `comment`, `timestamp`, `articleid`) VALUES (NULL, '$users_name',
         '$users_email', '$users_website', '$users_comment',
         CURRENT_TIMESTAMP, '$articleid');";
