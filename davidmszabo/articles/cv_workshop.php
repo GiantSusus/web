@@ -28,7 +28,7 @@
             <div class="minimenu"><div>MENU</div>
                 <select onchange="location=this.value">
                     <option></option>
-                    <option value="index.php">Home</option>
+                    <option value="../index_en.php">Home</option>
                 </select>
 			</div>
 		</div>
@@ -42,8 +42,8 @@
 		<div id="main-content"> <!-- main content for the p, h2 ..., col 1-3 only for the width: 100%;-->
 					<article>
 						<header>
-							<h2><a href="#">CV Workshop</a></h2>
-							<div class="info">By Admin on maj 24, 2014 with <a href="#">0 Commnets</a></div> <!-- end of info -->
+							<h2><a href="cv_workshop.php?id=1">CV Workshop</a></h2>
+							<div class="info">By Admin on may 24, 2014 with <a href="#">0 Commnets</a></div> <!-- end of info -->
   	</header> <!-- end of heading -->
     <content>
     <p>I attended a CV workshop at Göteborg University that was hosted by the IT mentorship program. I was a bit skeptical about it, because I thought that my CV looked quite structured and the content was OK. I brought my general swedish CV with me that was for a broad kind of job opportunities.</p>

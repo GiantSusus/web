@@ -52,13 +52,13 @@
                   </article>
                       <article>
                            <header>
-							    <h2><a href="articles/cv_workshop.php">CV Workshop</a></h2>
+							    <h2><a href="articles/cv_workshop.php?id=1">CV Workshop</a></h2>
 							<div class="info">By Admin on maj 24, 2014 with <a href="#">0 Commnets</a></div> <!-- end of info -->
   	</header> <!-- end of heading -->
     <content>
 							<p>I attended a CV workshop at Göteborg University that was hosted by the IT mentorship program. I was a bit skeptical about it, because I thought that my CV looked quite structured and the content was OK. I brought my general swedish CV with me that was for a broad kind of job opportunities.</p>
                <img src="images/CV_workshop/CV_workshop1.png" class="img-responsive img-rounded" >
-        <p class="more"><button type="button" class="btn btn-primary" onClick="parent.location='articles/cv_workshop.php'">Read More</button>
+        <p class="more"><button type="button" class="btn btn-primary" onClick="parent.location='articles/cv_workshop.php?id=1'">Read More</button>
     </content>
                  </article>
                 <div id="pagi">

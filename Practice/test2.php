@@ -1,0 +1,1 @@
+<a href="http://davidmszabo.com/Practice/test2.php?name=<?php echo $_GET['name']?>&Lname= <?php echo $_GET['Lname']?>">Test Page2</a><br/><br/>

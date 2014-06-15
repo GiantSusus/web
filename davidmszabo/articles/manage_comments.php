@@ -12,10 +12,18 @@ if( $_POST )
 
   // Below we are setting up our connection to the server. Because
   // the database lives on the same physical server as our php code,
-  // we are connecting to "localhost". inmoti6_myuser and mypassword
-  // are the username and password we setup for our database when
-  // using the "MySQL Database Wizard" within cPanel
-  $con = mysql_connect("localhost","u1214492_DavidS2","Jor3gg3lt_Vi3tn@m");
+  // we are connecting to "localhost". 
+  // write DB_HOST, DB_USER, DB_PASSWORD e.g.: localhost, root, password
+  // or if it is a webserver then: ip_address, db user name, db password
+  // previously with the DB_name: db1214492_davidmszabo and 83.168.227.176","u1214492_DavidS2","Jor3gg3lt_Vi3tn@m"
+  // or "u1214492_web","_Naegling882_" and db1214492_cityofassassins
+
+  $dbhost ='83.168.227.176';
+  $dbuser = 'u1214492_DavidS2';
+  $dbpassword = 'Jor3gg3lt_Vi3tn@m';
+  $database = 'db1214492_davidmszabo';
+
+  $con = mysql_connect($dbhost, $dbuser, $dbpassword);
 
   // The statement above has just tried to connect to the database.
   // If the connection failed for any reason (such as wrong username
@@ -29,7 +37,7 @@ if( $_POST )
   // We now need to select the particular database that we are working with
   // In this example, we setup (using the MySQL Database Wizard in cPanel) a
   // database named inmoti6_mysite
-  mysql_select_db("db1214492_davidmszabo", $con);
+  mysql_select_db($database, $con);
 
   // We now need to create our INSERT command to insert the user's
   // comment into the database.
@@ -108,22 +116,30 @@ if( $_POST )
   // database. The following code will check to ensure that $article_id is a number.
   // If it is not a number (IE someone is trying to hack your website), it will tell
   // the script to stop executing the page
-  if( ! is_numeric($articleid) )
+  if( !is_numeric($articleid) )
     die('invalid article id');
 
   // At this point, we've grabbed all of the data that we need. We now need
   // to update our SQL query. For example, instead of "John Smith", we'll
   // use $users_name. Below is our updated SQL command:
+
+//something is wrong with this insert into syntax!!!!!
+
   $query = "
-  INSERT INTO `db1214492_davidmszabo`.`comments` (`id`, `name`, `email`, `website`,
-        `comment`, `timestamp`, `articleid`) VALUES (NULL, '$users_name',
+  INSERT INTO db1214492_davidmszabo.comments (id, name, email, website,
+        comment, timestamp, articleid) VALUES (NULL, '$users_name',
         '$users_email', '$users_website', '$users_comment',
         CURRENT_TIMESTAMP, '$articleid');";
 
+$sql = "INSERT INTO `db1214492_davidmszabo`.`comments` (id, name, email, website, comment, timestamp, articleid) 
+VALUES (NULL , '$users_name', '$users_email', '$users_website', '$users_comment', CURRENT_TIMESTAMP, '$articleid')";
+
+$sqlTwo = 'INSERT INTO `db1214492_davidmszabo`.`comments` (`id`, `name`, `email`, `website`, `comment`, `timestamp`, `articleid`)
+ VALUES (\'\', \'cd\', \'ddsa@enauk.com\', \'dda.com\', \'dsaf\', CURRENT_TIMESTAMP, \'1\');';
 
   // Our SQL stated is stored in a variable called $query. To run the SQL command
   // we need to execute what is in the $query variable.
-  mysql_query($query);
+  mysql_query($sql);
 
   // We can inform the user to what's going on by printing a message to
   // the screen using php's echo function
