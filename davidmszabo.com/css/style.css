@@ -2,13 +2,18 @@
 /* CSS Document */
 
 /*
-	Theme Name: David Mark blog
+	Theme Name: DavidMark blog
 	Date: may 2014
 	Description: Basic HTML5/CSS3 layout built on a responsive framework
 	Version: 1.0
 	Author: David M. Szabo
 	Author URL: http://davidmszabo.com
+	copyright
 */
+
+/* ===========================
+   ======= Body style ======== 
+   =========================== */
 
 body {
 	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
@@ -17,6 +22,12 @@ body {
 	padding: 0;
 	color: #000;
 }
+
+
+/* ===========================
+   ========= Headings ======== 
+   =========================== */
+
 
 /* ~~ Element/tag selectors ~~ */
 ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
@@ -31,6 +42,12 @@ h1, h2, h3, h4, h5, h6, p {
 a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
 	border: none;
 }
+
+/* ===========================
+   ======= Anchor style ====== 
+   =========================== */
+
+
 /* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
 a:link {
 	color: #42413C; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
@@ -51,7 +68,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	width: 90%;
 }
 																
-																/* ------------------Header-------------------- */
+													/* ------------------Header-------------------- */
 
 /* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
 header {}
@@ -61,6 +78,11 @@ header {}
 1) Padding is only placed on the top and/or bottom of the div. The elements within this div have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
 
 */
+
+/* ===========================
+   ===== Main Navigation ===== 
+   =========================== */
+
 
 nav { display: block; background-image: url(../images/background_gray.jpg); }
 nav .wrap-nav{  height: 60px; width: 95%; /*this determines that how far is it from the right side*/ }
@@ -77,7 +99,10 @@ nav .wrap-nav{  height: 60px; width: 95%; /*this determines that how far is it f
 .minimenu select{ position: absolute;top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0;filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);	cursor: pointer;}
 
 
-									/* ~~ The content ~~ */
+/* ===========================
+   ======= Content Area ====== 
+   =========================== */
+
 
 #content { }
 #content h1 {}
@@ -135,7 +160,9 @@ nav .wrap-nav{  height: 60px; width: 95%; /*this determines that how far is it f
 #main-content #pagi li a:hover {color: #ffffff;	background: #DB5705; }
 
 
-									/* ~~ The sidebar ~~ */
+/* ===========================
+   ========= Sidebar ========= 
+   =========================== */
 
 
 .top-sidebar { width: 24%; float: left; margin: 2% 0 2% 2%; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; background-color: #F8F8FF; padding: 1%; border: 1px solid #CCC; font-family: Verdana, Arial, Helvetica, sans-serif; }
@@ -156,7 +183,9 @@ nav .wrap-nav{  height: 60px; width: 95%; /*this determines that how far is it f
 
 																
 																
-									/* ~~ The footer ~~ */
+/* ===========================
+   ========= Footer ========== 
+   =========================== */
 																
 																
 
