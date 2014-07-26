@@ -1,5 +1,8 @@
 <?
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 // When someone submits a comment, they "POST" the comment to the server.
 // Therefore, we only want to insert a comment to the database if there
 // is POST data. The if statement below checks to see if someone has
@@ -27,22 +30,22 @@ if( $_POST )
   $dbpassword = 'Jor3gg3lt_Vi3tn@m';
   $database = 'db1214492_davidmszabo';
 
-  $con = mysql_connect($dbhost, $dbuser, $dbpassword);
+  $con = mysqli_connect($dbhost, $dbuser, $dbpassword, $database);
 
   // The statement above has just tried to connect to the database.
   // If the connection failed for any reason (such as wrong username
   // and or password, we will print the error below and stop execution
   // of the rest of this php script
-  if (!$con)
+ if (mysqli_connect_errno())
   {
-    die('Could not connect: ' . mysql_error());
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
   // We now need to select the particular database that we are working with
   // In this example, we setup (using the MySQL Database Wizard in cPanel) a
   // database named inmoti6_mysite
 
-  mysql_select_db($database, $con);
+  // mysql_select_db($database, $con);
   
   // We now need to create our INSERT command to insert the user's
   // comment into the database.
@@ -103,7 +106,7 @@ if( $_POST )
   $users_email = mysql_real_escape_string($users_email);
   $users_website = mysql_real_escape_string($users_website);
   $users_comment = mysql_real_escape_string($users_comment);
-  
+
   // We also need to get the article id, so we know if the comment belongs
   // to page 1 or if it belongs to page 2. The article id is going to be
   // passed in the URL. For example, looking at this URL:
@@ -130,17 +133,18 @@ if( $_POST )
 
 //something is wrong with this insert into syntax!!!!!
 
-  $query = "
-  INSERT INTO db1214492_davidmszabo.comments (id, name, email, website,
-        comment, timestamp, articleid) VALUES (NULL, '$users_name', '$users_email', '$users_website', '$users_comment',
-        CURRENT_TIMESTAMP, '$articleid');";
+  $query = '
+  INSERT INTO `db1214492_davidmszabo`.`comments` (`id`, `name`, `email`, `website`,
+        `comment`, `timestamp`, `articleid`) VALUES (NULL, \'$users_name\', \'$users_email\', \'$users_website\', \'$users_comment\',
+        CURRENT_TIMESTAMP, \'$articleid\');';
 
  /* INSERT INTO `inmoti6_mysite`.`comments` (`id`, `name`, `email`, `website`,
         `comment`, `timestamp`, `articleid`) VALUES (NULL, '$users_name',
         '$users_email', '$users_website', '$users_comment',
         CURRENT_TIMESTAMP, '$articleid');";*/
 
-$sql = "INSERT INTO `db1214492_davidmszabo`.`comments` (id, name, email, website, comment, timestamp, articleid) 
+$sql = "INSERT INTO `db1214492_davidmszabo`.`comments` (`id`, `name`, `email`, `website`, `comment`, `timestamp`,
+ `articleid`) 
 VALUES (NULL , '$users_name', '$users_email', '$users_website', '$users_comment', CURRENT_TIMESTAMP, '$articleid')";
 
 $sqlTwo = 'INSERT INTO `db1214492_davidmszabo`.`comments` (`id`, `name`, `email`, `website`, `comment`, `timestamp`,
@@ -148,7 +152,9 @@ $sqlTwo = 'INSERT INTO `db1214492_davidmszabo`.`comments` (`id`, `name`, `email`
 
   // Our SQL stated is stored in a variable called $query. To run the SQL command
   // we need to execute what is in the $query variable.
-  mysql_query($sql);
+  $result = mysql_query($query);
+
+  echo $result;
 
   // We can inform the user to what's going on by printing a message to
   // the screen using php's echo function

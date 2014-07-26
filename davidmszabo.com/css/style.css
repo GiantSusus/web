@@ -17,12 +17,18 @@
 
 body {
 	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
-	background-color: #42413C;
 	margin: 0;
 	padding: 0;
 	color: #000;
 }
 
+/* ~~ this fixed width container surrounds the other divs ~~ */
+#body {
+	background-color: #FFF;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+	min-height: 100%;
+	width: 90%;
+}
 
 /* ===========================
    ========= Headings ======== 
@@ -36,11 +42,7 @@ ul, ol, dl { /* Due to variations between browsers, it's best practices to zero 
 }
 h1, h2, h3, h4, h5, h6, p {
 	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
-	padding-right: 15px;
-	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
-}
-a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
-	border: none;
+	padding: 0 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
 }
 
 /* ===========================
@@ -48,6 +50,9 @@ a img { /* this selector removes the default blue border displayed in some brows
    =========================== */
 
 
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
 /* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
 a:link {
 	color: #42413C; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
@@ -57,93 +62,132 @@ a:visited {
 	text-decoration: underline;
 }
 a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
-	text-decoration: none;
+	text-decoration: none; /*the background-color is added at the main navigation */
 }
-
-/* ~~ this fixed width container surrounds the other divs ~~ */
-#container {
-	background-color: #FFF;
-	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
-	min-height: 100%;
-	width: 90%;
-}
-																
-													/* ------------------Header-------------------- */
-
-/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
-header {}
-
-/* ~~ This is the layout information. ~~ 
-
-1) Padding is only placed on the top and/or bottom of the div. The elements within this div have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
-
-*/
 
 /* ===========================
    ===== Main Navigation ===== 
    =========================== */
 
+.mainHeader nav { 
+	background-image: url(../images/background_gray.jpg);
+	height: 60px; 
+	line-height: 50px;
+	margin: 0 auto 0.5% auto; /* top right bottom left */
+	font-size: 14px; 
+	font-weight:bold; 
+	text-transform: uppercase; 
+	font-family: 'Passion One', cursive;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px; }
 
-nav { display: block; background-image: url(../images/background_gray.jpg); }
-nav .wrap-nav{  height: 60px; width: 95%; /*this determines that how far is it from the right side*/ }
+.mainHeader nav ul { list-style: none; margin: 0 auto; padding: 0; }
+.mainHeader nav  ul li { 
+	position: relative; 
+	float: left;  
+	display: inline; }
 
-.menu ul { list-style: none; margin: 0; padding: 0; }
-.menu  ul li { position: relative; float: right; padding: 1% 1% 0px 1%; /*top right bottom left*/}
-.menu  ul li:hover { background-color:#DB5705; }
-.menu  ul li a { font-size: 14px; text-decoration: none; line-height:34px; color: #CCC; display: block; padding: 6px 10px; margin-bottom: 5px; z-index: 6; font-weight:bold; text-transform: uppercase; font-family: 'Passion One',cursive; }
-.menu  ul li:hover a { color: #FFFFFF; }
+.mainHeader nav a:link, .mainHeader nav a:visited {
+	color: #CCC;
+	display: inline-block;
+	height: 60px;
+	padding: 5px 23px; /* line-height: 50px; padding-top and bottom: 2 * 5px = 10px -> total = 60px */
+	text-decoration: none; }
 
-.minimenu{ display:none;}
-.minimenu{ position: relative; margin: 0px;background:#333333;}
-.minimenu div{ overflow: hidden; position: relative; font: 18px/37px 'PT Sans Narrow'; color: #fff;text-align:center; text-transform: uppercase;font-weight:bold;}
-.minimenu select{ position: absolute;top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0;filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);	cursor: pointer;}
+.mainHeader nav a:hover, .mainHeader nav a:active,
+.mainHeader nav .active a:link, .mainHeader nav .active a:visited {
+	background: #3497BF;
+	color: #FFFFFF;
+	text-shadow: none !important; }
 
+.mainHeader nav  ul li a { 
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px; }
 
 /* ===========================
    ======= Content Area ====== 
    =========================== */
 
 
-#content { }
-#content h1 {}
-#content p { }
-#content .wrap-content{ background-color: #FFF; width: 74%; float: left; /*sidebar can push it now, 74%, 24% sidebar + 2% margin left = 100% */ }
+#content { 
+	line-height: 25px;
+	width: 74%; 
+	float: left; /* sidebar can push it now, 74%, 24% sidebar + 2% margin left = 100% */
+	margin-top: 2%;
+	background-color: #FFF; 
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px; }
 
-#main-content{}
-#main-content article{ width: auto; background-color: #F8F8FF; font-size:14px; border: 1px solid #CCC; margin: 3% 0px; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; 
- }
-#main-content article header{ padding: 3% 5%; }
+#content article { 
+	width: auto; 
+	margin-bottom: 3%; 
+	background-color: #F8F8FF; 
+	font-size:14px; 
+	border: 1px solid #CCC; 
+	border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; }
 
-#main-content article content{ font-family: Verdana, Arial, Helvetica, sans-serif; }
-#main-content article h2{ font-size:32px; text-align: center; line-height:30px; font-family: DeliciousBold,Helvetica,Arial,Sans-serif; letter-spacing: -0.5px; text-decoration: none;}
-#main-content article .info{ font-family: Verdana, Arial, Helvetica, sans-serif; font-style:italic; text-align: center; font-size:12px;}
-#main-content article .info a{ text-decoration: underline; }
-#main-content article p { margin-bottom:3%; margin-left: 5%; }
-#main-content article .more { margin-left: 75%; }
+#content article header { padding: 3% 5%; }
+
+#content article content { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; }
+
+#content article h2{ 
+	font-size:32px; 
+	text-align: center; 
+	line-height:30px; 
+	font-family: DeliciousBold,Helvetica,Arial,Sans-serif; 
+	letter-spacing: -0.5px; 
+	text-decoration: none; }
+
+#content article .info{ 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-style:italic; 
+	text-align: center; 
+	font-size:12px; }
+
+#content article .info a{ text-decoration: underline; }
+#content article p { 
+	margin-bottom:3%; 
+	margin-left: 5%; }
+
+#content article .more { margin-left: 75%; }
 
 							/*~~~~added for the single page~~~~~*/
 							
-#main-content article content img { width: 90%; display: block; margin: 3% auto; }/*kell a display block, h közepre menjen*/
-#main-content article content a {text-decoration: none; color: #DB5705; }
-#main-content article content a.current {color: #ffffff; background: #DB5705;}
-#main-content article content a:hover { color: #ffffff;	background: #DB5705;}
+#content article content img { width: 90%; display: block; margin: 3% auto; }/*kell a display block, h közepre menjen*/
+#content article content a {text-decoration: none; color: #DB5705; }
+#content article content a.current {color: #ffffff; background: #DB5705;}
+#content article content a:hover { color: #ffffff;	background: #DB5705;}
 
 								/*~~~~single page comment section~~~~~*/
 
-#main-content .comment{ font-weight: bold; margin: 50px 0px; width: auto;}
-#main-content .comment div{ margin-bottom: 20px; vertical-align: middle; }
-#main-content .comment input{ border: 2px solid #999999; padding: 8px 10px; width:250px;}
-#main-content .comment textarea{ border: 2px solid #999999; padding: 8px 10px; width:95%; margin-bottom: 2%;}
-#main-content .comment input[type="submit"] { cursor: pointer; width:100px; float:right;
-	background: -webkit-linear-gradient(top, #efefef, #ddd);background: -moz-linear-gradient(top, #efefef, #ddd);
-	background: -ms-linear-gradient(top, #efefef, #ddd);background: -o-linear-gradient(top, #efefef, #ddd);
+#content .comment{ font-weight: bold; margin: 50px 0px; width: auto;}
+#content .comment div{ margin-bottom: 20px; vertical-align: middle; }
+#content .comment input{ border: 2px solid #999999; padding: 8px 10px; width:250px;}
+#content .comment textarea{ border: 2px solid #999999; padding: 8px 10px; width:95%; margin-bottom: 2%;}
+#content .comment input [type="submit"] { 
+	cursor: pointer; 
+	width:100px; 
+	float:right;
+	background: -webkit-linear-gradient (top, #efefef, #ddd); 
+	background: -moz-linear-gradient(top, #efefef, #ddd);
+	background: -ms-linear-gradient(top, #efefef, #ddd); 
+	background: -o-linear-gradient(top, #efefef, #ddd);
 	background: linear-gradient(top, #efefef, #ddd);
-	color: #333;text-shadow: 0px 1px 1px rgba(255,255,255,1);	border: 2px solid #999999; margin-bottom: 2%; }
-#main-content .comment input[type="submit"]:hover {
+	color: #333;
+	text-shadow: 0px 1px 1px rgba(255,255,255,1);	
+	border: 2px solid #999999; 
+	margin-bottom: 2%; }
+#content .comment input[type="submit"]:hover {
 	background: -webkit-linear-gradient(top, #eee, #ccc);	background: -moz-linear-gradient(top, #eee, #ccc);
 	background: -ms-linear-gradient(top, #eee, #ccc);	background: -o-linear-gradient(top, #eee, #ccc);
 	background: linear-gradient(top, #eee, #ccc);	border: 2px solid #bbb;}
-#main-content .comment input[type="submit"]:active {
+#content .comment input[type="submit"]:active {
 	background: -webkit-linear-gradient(top, #ddd, #aaa);	background: -moz-linear-gradient(top, #ddd, #aaa);
 	background: -ms-linear-gradient(top, #ddd, #aaa);	background: -o-linear-gradient(top, #ddd, #aaa);
 	background: linear-gradient(top, #ddd, #aaa);	border: 2px solid #999;}
@@ -153,11 +197,11 @@ nav .wrap-nav{  height: 60px; width: 95%; /*this determines that how far is it f
 
 								/*~~~~	pagi navigation	~~~~*/
 
-#main-content  #pagi { width: 180px; height: 40px; margin-left: auto; margin-right: auto; padding: 0;list-style: none; width: 190px;}
-#main-content #pagi li { float: left;margin-right: 10px; }
-#main-content #pagi li a { display: block;	text-decoration: none; color: #717171; font: bold 12px Arial, sans-serif;padding: 5px 8px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background: #ffffff; }
-#main-content #pagi li a.current {color: #ffffff; background: #DB5705; }
-#main-content #pagi li a:hover {color: #ffffff;	background: #DB5705; }
+#content  #pagi { width: 180px; height: 40px; margin-left: auto; margin-right: auto; padding: 0;list-style: none; width: 190px;}
+#content #pagi li { float: left;margin-right: 10px; }
+#content #pagi li a { display: block;	text-decoration: none; color: #717171; font: bold 12px Arial, sans-serif;padding: 5px 8px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background: #ffffff; }
+#content #pagi li a.current {color: #ffffff; background: #3497BF; }
+ #pagi li a:hover {color: #ffffff;	background: #3497BF; }
 
 
 /* ===========================
@@ -165,21 +209,67 @@ nav .wrap-nav{  height: 60px; width: 95%; /*this determines that how far is it f
    =========================== */
 
 
-.top-sidebar { width: 24%; float: left; margin: 2% 0 2% 2%; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; background-color: #F8F8FF; padding: 1%; border: 1px solid #CCC; font-family: Verdana, Arial, Helvetica, sans-serif; }
+.top-sidebar { 
+	width: 24%; /* 100% - (content width 74% + sidebar margin left: 2%) = 24% */
+	float: left; 
+	margin: 2% 0 2% 2%; /* top right bottom left */
+	border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	background-color: #F8F8FF; 
+	padding: 1%; 
+	border: 1px solid #CCC; 
+	font-family: Verdana, Arial, Helvetica, sans-serif; }
 
-.top-sidebar h5 { font-weight: bold; text-align: left; border-bottom: 1px solid #CCC;}
-.top-sidebar img { float: left; width: 71px; height: 90px; margin-right: 5%; }
-.top-sidebar p { text-align: left; font-weight: 550; font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif; }
-.top-sidebar h6 { font: bold 9px Verdana, Arial, Helvetica, sans-serif; }
-.top-sidebar  ul { display: inline-block; list-style: none; margin: 0; padding: 0; }
-.top-sidebar  ul li { position: relative; float: left; padding: 0 3px; }
+.top-sidebar h5 { 
+	font-weight: bold; 
+	text-align: left; 
+	border-bottom: 1px solid #CCC; }
+.top-sidebar img { 
+	float: left; 
+	width: 71px; 
+	height: 90px; 
+	margin-right: 5%; }
+.top-sidebar p { 
+	text-align: left; 
+	font-weight: 550; 
+	font-size: 11px; 
+	font-family: Verdana, Arial, Helvetica, sans-serif; }
+.top-sidebar h6 { 
+	font: bold 9px Verdana, Arial, Helvetica, sans-serif; }
+.top-sidebar  ul { 
+	display: inline-block; 
+	list-style: none; 
+	margin: 0; 
+	padding: 0; }
+.top-sidebar  ul li { 
+	position: relative; 
+	float: left; 
+	padding: 0 3px; }
 .top-sidebar  ul li img { float: left; width: 17px; height: 17px; }
 
 
-.bottom-sidebar { width: 24%; float: left; margin-left: 2%; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; background-color: #F8F8FF; padding: 1%; border: 1px solid #CCC; font-family: Verdana, Arial, Helvetica, sans-serif; }
+.bottom-sidebar { 
+	width: 24%; 
+	float: left; 
+	margin-left: 2%; 
+	border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	background-color: #F8F8FF; 
+	padding: 1%; 
+	border: 1px solid #CCC; 
+	font-family: Verdana, Arial, Helvetica, sans-serif; }
 	
-.bottom-sidebar h5 { font-weight: bold; text-align: left; border-bottom:1px solid #CCC;}
-.bottom-sidebar p { text-align: left; font-weight: 550; font-size: 12px; font-family: Verdana, Arial, Helvetica, sans-serif; }
+.bottom-sidebar h5 { 
+	font-weight: bold; 
+	text-align: left; 
+	border-bottom:1px solid #CCC;}
+.bottom-sidebar p { 
+	text-align: left; 
+	font-weight: 550; 
+	font-size: 12px; 
+	font-family: Verdana, Arial, Helvetica, sans-serif; }
 
 																
 																
@@ -189,15 +279,37 @@ nav .wrap-nav{  height: 60px; width: 95%; /*this determines that how far is it f
 																
 																
 
-footer { margin-top: 15px; clear: both; background-image: url(../images/background_gray.jpg); color: #ffffff; }
+.mainFooter { 
+	margin-top: 15px; 
+	clear: both; 
+	background-image: url(../images/background_gray.jpg); 
+	color: #CCC; 
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	}
 
-footer .clearfix:after {
+.mainFooter .clearfix:after {
    content: " "; /* Older browser do not support empty content */
    visibility: hidden;
    display: block;
    height: 0;
    clear: both; }
-footer header { padding: 1px 0px; border-bottom: 3px solid #DB5705; }
-footer header h2{ font-size:22px; font-weight:normal; padding:0 15px; font-family: 'Passion One',cursive; }
-footer .content { padding: 3px; }
-footer p { font-family: 'Passion One', cursive; }
+
+.mainFooter header { /* the role of the header is to have a straight line under the h2 in the footer*/
+	padding: 1px 0px; 
+	border-bottom: 3px solid #3497BF; }
+
+.mainFooter header h2 {
+	padding:3px 15px;  
+	font-size: 22px; 
+	font-weight: normal; 
+	font-family: 'Passion One',cursive; }
+
+.mainFooter .content { padding: 3px; }
+.mainFooter p { font-family: 'Passion One', cursive; }
+
+
+
+
+
+

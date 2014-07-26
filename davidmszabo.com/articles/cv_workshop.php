@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC>
-<html>
+<html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Life of David</title>
@@ -11,36 +11,20 @@
 <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
 
-<body>
+<body id="body">
 
 <? include("manage_comments.php"); ?>
-<!-- on localhost go to http://localhost/~jatekbox/phpmyadmin/index.php and http://localhost/~jatekbox/testsite/index_en.php-->
+<!-- on localhost go to http://localhost/~jatekbox/phpmyadmin/index.php and http://localhost/~jatekbox/testsite/web/davidmszabo.com/index_en.php-->
 
-<div id="container">
-  <header>
-  	<nav>
-		<div class="wrap-nav">
-          <div class="menu">
-                     <ul>
-                        <li><a href="../index_en.php">Home</a></li>
-                    </ul>
-          </div>
-				
-            <div class="minimenu"><div>MENU</div>
-                <select onchange="location=this.value">
-                    <option></option>
-                    <option value="../index_en.php">Home</option>
-                </select>
-			</div>
-		</div>
-	</nav>
+  <header class="mainHeader">
+    <nav><ul>
+              <li><a href="../index_en.php">Home</a></li>
+          </ul>
+    </nav>
    <!-- end .header --></header>
     
-    
-    
+        
   <div id="content">
-  <div class="wrap-content">
-		<div id="main-content"> <!-- main content for the p, h2 ..., col 1-3 only for the width: 100%;-->
 					<article>
 						<header>
 							<h2><a href="cv_workshop.php?id=1">CV Workshop</a></h2>
@@ -68,14 +52,11 @@ And yet another confirmation of the fact that it’s people who make the place �
            			</article>
                     
                     	<!--  ~~~~~~~~comment~~~~~~~~~~~~~~ -->
-             
             <div class="comment">
             	<? include("display_comments.php"); ?>
                 <p>Your email address will not be published. Required fields are marked *</p>
                 <?php include 'formcode.php'; ?>
             </div>
-            </div>
-    	</div>
     <!-- end .content --></div>
     
     						<!-- ~~~~~~~~	sidebar	  ~~~~~~~~ -->
@@ -103,12 +84,12 @@ And yet another confirmation of the fact that it’s people who make the place �
     
 								<!-- ~~~~~~~~	footer	  ~~~~~~~~ -->
     
-  <footer>
-		<header><h2>DavidMark webdesign</h2></header>
-				<div class="content">
-							<p>Copyright © 2015 </p>
-				</div>
-  </footer>
+  <footer class="mainFooter">
+    <header><h2>DavidMark webdesign</h2></header>
+        <div class="content">
+              <p>Copyright © 2015 </p>
+        </div>
+    <!-- end .footer --></footer>
   
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

@@ -10,8 +10,14 @@
 // we are connecting to "localhost". inmoti6_myuser and mypassword
 // are the username and password we setup for our database when
 // using the "MySQL Database Wizard" within cPanel
+// "localhost", "root", " "
 
-$con = mysql_connect("localhost","root"," ");
+  $dbhost ='83.168.227.176';
+  $dbuser = 'u1214492_DavidS2';
+  $dbpassword = 'Jor3gg3lt_Vi3tn@m';
+  $database = 'db1214492_davidmszabo';
+
+  $con = mysql_connect($dbhost, $dbuser, $dbpassword);
  
 // The statement above has just tried to connect to the database.
 // If the connection failed for any reason (such as wrong username
@@ -25,9 +31,9 @@ if (!$con)
  
 // We now need to select the particular database that we are working with
 // In this example, we setup (using the MySQL Database Wizard in cPanel) a
-// database named inmoti6_mysite
+// database named inmoti6_mysite - mysql_select_db("inmoti6_mysite", $con);
 
-mysql_select_db("inmoti6_mysite", $con);
+mysql_select_db($database, $con);
 
 // We now need to setup our SQL query to grab all comments from this page.
 // The example SQL query we copied from phpMyAdmin is:
@@ -59,7 +65,7 @@ if( ! is_numeric($article_id) )
 // is what it looks like after we update the article number and assign the
 // query to a variable named $query
 
-$query = "SELECT * FROM `comments` WHERE `articleid` =$article_id LIMIT 0 , 30";
+$query = "SELECT * FROM `comments` WHERE `articleid` = $article_id LIMIT 0 , 30";
 
 // Now that we have our Query, we will run the query against the database
 // and actually grab all of our comments
